@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: santizabe <santizabe@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 01:54:27 by szapata-          #+#    #+#             */
-/*   Updated: 2023/12/14 23:18:30 by santizabe        ###   ########.fr       */
+/*   Created: 2023/12/14 22:38:11 by santizabe         #+#    #+#             */
+/*   Updated: 2023/12/14 23:17:16 by santizabe        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
+    char    *s;
+    char    *tmp;
 
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
+    s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+    if (!s)
+        return (s);
+    tmp = s;
+    s = (char *)ft_memmove(s, s1, ft_strlen(s1));
+    s = (char *)ft_memmove(s + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+    return (tmp);
 }
