@@ -13,16 +13,16 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char    *s;
-    char    *tmp;
+	char	*s;
+	char	*tmp;
 
-    s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-    if (!s)
-        return (s);
-    tmp = s;
-    s = (char *)ft_memmove(s, s1, ft_strlen(s1));
-    s = (char *)ft_memmove(s + ft_strlen(s1), s2, ft_strlen(s2) + 1);
-    return (tmp);
+	s = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s)
+		return (s);
+	tmp = s;
+	s = (char *)ft_memmove(s, s1, ft_strlen(s1));
+	s = (char *)ft_memmove(s + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (tmp);
 }
