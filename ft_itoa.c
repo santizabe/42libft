@@ -1,31 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szapata- <szapata-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 23:19:24 by santizabe         #+#    #+#             */
-/*   Updated: 2023/12/19 21:17:49 by szapata-         ###   ########.fr       */
+/*   Created: 2023/12/19 21:15:39 by santizabe         #+#    #+#             */
+/*   Updated: 2023/12/19 22:56:23 by szapata-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	digit_count(int n)
 {
-	size_t	len;
-	char	*str;
+	int	count;
 
-	while (ft_strchr(set, *s1) && *s1)
-		s1++;
-	len = ft_strlen(s1);
-	while (len && ft_strrchr(set, *(s1 + len - 1)))
-		len--;
-	str = (char *)malloc(len + 1);
+	if (!n)
+		return (1);
+	count = 0;
+	while (n && ++count)
+		n /= 10;
+	return (count);
+}
+
+char	*ft_itoa(int n)
+{
+	int		count;
+	int		minus;
+	char	*str;
+	char	*tmp;
+
+	count = digit_count(n);
+	minus = 1;
+	if (n < 0)
+		count++;
+	str = (char *)malloc(count + 1);
 	if (!str)
 		return (str);
-	ft_strlcpy(str, s1, len + 1);
-	return (str);
+	tmp = str;
+	str[count + 1] = 0;
+	if (n < 0 && count--)
+	{
+		minus = -1;
+		*str++ = '-';
+	}
+	while (count)
+	{
+		str[--count] = ((n % 10) * minus) + 48;
+		n /= 10;
+	}
+	return (tmp);
 }
