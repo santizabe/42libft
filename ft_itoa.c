@@ -6,7 +6,7 @@
 /*   By: szapata- <szapata-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 21:15:39 by santizabe         #+#    #+#             */
-/*   Updated: 2023/12/19 22:56:23 by szapata-         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:34:42 by szapata-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (str);
 	tmp = str;
-	str[count + 1] = 0;
+	str[count] = 0;
 	if (n < 0 && count--)
 	{
 		minus = -1;
