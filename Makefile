@@ -32,8 +32,8 @@ bonus: $(B_OBJS)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
-	rm -f $(OBJS)
+clean: $(OBJS) $(B_OBJS)
+	rm -f $(OBJS) $(B_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

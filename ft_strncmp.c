@@ -6,12 +6,11 @@
 /*   By: szapata- <szapata-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:26:16 by szapata-          #+#    #+#             */
-/*   Updated: 2023/12/12 11:33:36 by szapata-         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:19:14 by szapata-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {

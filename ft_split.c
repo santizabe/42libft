@@ -6,13 +6,12 @@
 /*   By: szapata- <szapata-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 03:08:04 by santizabe         #+#    #+#             */
-/*   Updated: 2023/12/19 21:17:36 by szapata-         ###   ########.fr       */
+/*   Updated: 2023/12/21 14:16:12 by szapata-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static void	free_memory(char **str_arr)
 {
@@ -72,17 +71,3 @@ char	**ft_split(char const *s, char c)
 	str_arr[i] = NULL;
 	return (str_arr);
 }
-
-// int main(void)
-// {
-// 	char	**arr_list;
-// 	int		i = 0;
-// 	arr_list = ft_split("Hola mundo!", ' ');
-// 	while(arr_list[i] != NULL)
-// 	{
-// 		printf("%s\n", arr_list[i]);
-// 		i++;
-// 	}
-// 	free_memory(arr_list);
-// 	return (0);
-// }
